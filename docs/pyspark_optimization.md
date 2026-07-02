@@ -6,7 +6,7 @@ This document outlines the performance metrics and distributed computing strateg
 ## 2. Spark UI Evidence
 The following screenshot confirms the successful execution of 8 pipeline stages, validating the DAG (Directed Acyclic Graph) and partition utilization.
 
-![Spark UI Metrics](sparkui.jpg)
+![Spark UI Metrics](screenshots/sparkui.jpg)
 
 ## 3. Distributed Computing Principles
 *   **Partitioning**: Configured with `spark.sql.shuffle.partitions=4` to optimize data distribution across local CPU cores.

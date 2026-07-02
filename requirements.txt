@@ -1,1 +1,3 @@
 pyspark
+sqlite3
+pandas
