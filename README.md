@@ -14,4 +14,5 @@ A data engineering pipeline designed to ingest, join, and clean Bus Open Data Se
 ## Pipeline Status
 - **Ingestion**: Multi-catalogue join implemented using a surgical right-join strategy.
 - **Milestone**: Achieved 103,437 records.
-- **Current Phase**: Data Ingestion and Join complete; Data Cleaning and Feature Engineering pending.
+- **Current Phase**: Data Ingestion and Cleaning Complete
+
