@@ -23,19 +23,8 @@ To maximize data density and performance efficiency, the pipeline consolidates t
 ## 🏗️ System Architecture
 The analytics pipeline operates as a coherent, decoupled software solution, scaling from raw data ingestion to a user-facing dashboard.
 
-+----------------------+       +--------------------------+
-|  Raw Data (CSV)      | ----> |  PySpark Data Engine     |
-+----------------------+       +------------+-------------+
-                                            |
-                                            v
-+----------------------+       +------------+-------------+
-|  SQLite Database     | <---- |  In-Memory Cache & SQL   |
-+----------------------+       +------------+-------------+
-                                            |
-                                            v
-+----------------------+       +------------+-------------+
-| Dashboard (Streamlit)| <---  |  MLlib Pipeline (DAG)    |
-+----------------------+       +------------+-------------+
+![Architectural Design](screenshots/archihtecture.png)
+
 
 ## Running the Project
 Ensure you have Python 3 installed
