@@ -23,7 +23,7 @@ To maximize data density and performance efficiency, the pipeline consolidates t
 ## 🏗️ System Architecture
 The analytics pipeline operates as a coherent, decoupled software solution, scaling from raw data ingestion to a user-facing dashboard.
 
-![Architectural Design](screenshots/archihtecture.png)
+![Architectural Design](docs/screenshots/architecture.png)
 
 
 ## Running the Project
