@@ -6,6 +6,22 @@ To maximize data density and performance efficiency, the pipeline consolidates t
 1.  **Static Schedule Layer (`overall_data_catalogue.csv`)**: Contains the comprehensive national timetable metadata, service registration profiles, and operator codes.
 2.  **Historical Tracking Layer (`overall_compliance_report.csv`)**: Captures the aggregated performance metrics derived from raw vehicle monitoring logs. The core engine relies on the `% AVL to Timetables feed matching score` column.
 
+## Folder Structure
+
+```text
+Operator Non Compliance
+ ┣  data                  # Raw CSVs, cleaned data, and the generated SQLite database
+ ┣  docs                  # Documentation, justification files, and screenshots
+ ┃ ┗  screenshots         # Visuals of EDA, ML metrics, and Spark UI
+ ┣  models                # Saved ML models (e.g., rf_compliance_model)
+ ┣  notebook              # Jupyter notebooks
+ ┃ ┗  BODS_Pipeline.ipynb # Main PySpark engineering and ML pipeline
+ ┣  scripts               # Python scripts (Dashboard UI)
+ ┃ ┗  engine.py           # Streamlit dashboard application
+ ┣  requirements.txt      # Python dependencies
+ ┗  README.md             # Project documentation
+ ```
+
 ### Technical Alignment with the Brief:
 *   **AVL (Automatic Vehicle Location)** tracking metrics represent the aggregated analytical snapshot of historical GPS tracking feeds compiled by transit authorities.
 *   The "matching score" is the direct mathematical result of cross-referencing past location telemetry against scheduled timetables to measure reliability.
@@ -20,7 +36,7 @@ To maximize data density and performance efficiency, the pipeline consolidates t
     - `spark.hadoop.fs.defaultFS`: `file:///` (Ensures local file system compatibility).
 
 
-## 🏗️ System Architecture
+## System Architecture
 The analytics pipeline operates as a coherent, decoupled software solution, scaling from raw data ingestion to a user-facing dashboard.
 
 ![Architectural Design](docs/screenshots/architecture.png)
@@ -48,3 +64,4 @@ Algorithmic Complexity & Performance:
 ## Critical Analysis of the 1.0 F1-Score:
 
 The tree-based models achieved perfect metrics, which highlights a strict deterministic relationship within the BODS network rather than a probabilistic one. Non-compliance is heavily dictated by categorical administrative rules tied to specific Operators and their Scope Status. Consequently, the recommendation for regulatory bodies is to pivot away from random auditing and enforce strict API-level data validation for the top 5 high-volume "mega-operators," who account for the vast majority of the network's data throughput.
+
