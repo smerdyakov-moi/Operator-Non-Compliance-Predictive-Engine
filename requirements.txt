@@ -1,3 +1,5 @@
 pyspark
-sqlite3
-pandas
+pandas0
+matplotlib
+seaborn
+streamlit
